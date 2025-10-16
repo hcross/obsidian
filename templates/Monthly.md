@@ -262,9 +262,9 @@ let totalBike = valuesBike.reduce((a, b) => a + b, 0).toFixed(1);
 let totalWalk = valuesWalk.reduce((a, b) => a + b, 0).toFixed(1);
 let totalVaa  = valuesVaa.reduce((a, b) => a + b, 0).toFixed(1);
 
-// ====== Totals headers ===================================================
-let header = document.createElement('div');
-header.style.textAlign = 'center';
+// ====== Totals DIV ===================================================
+let div = document.createElement('div');
+div.style.textAlign = 'center';
 
 const metric = (value, label, emoji) => `
   <div style="margin-right: 40px; display: flex; align-items: center;">
@@ -276,14 +276,14 @@ const metric = (value, label, emoji) => `
   </div>
 `;
 
-header.innerHTML = `
+div.innerHTML = `
   <div style="display:flex; justify-content:center; align-items:center;">
     ${metric(totalBike, 'Vélo', '🚴')}
     ${metric(totalWalk, 'Marche', '🚶')}
     ${metric(totalVaa,  'Va’a', '🛶')}
   </div>
 `;
-this.container.appendChild(header);
+this.container.appendChild(div);
 
 // ====== Chart (Obsidian Charts / Chart.js) ===============================
 let chart = {
